@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="245" height="245" viewBox="0 0 245 245">
+  <defs>
+    <filter id="Rectangle_46" x="0" y="0" width="245" height="245" filterUnits="userSpaceOnUse">
+      <feOffset dy="15" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_58" data-name="Group 58" transform="translate(-237.5 -288.5)">
+    <g transform="matrix(1, 0, 0, 1, 237.5, 288.5)" filter="url(#Rectangle_46)">
+      <rect id="Rectangle_46-2" data-name="Rectangle 46" width="200" height="200" rx="20" transform="translate(22.5 7.5)" fill="#769fcd"/>
+    </g>
+    <ellipse id="Ellipse_11" data-name="Ellipse 11" cx="24.615" cy="24.231" rx="24.615" ry="24.231" transform="translate(335.385 347.538)" fill="#ffdbac"/>
+    <path id="Path_4" data-name="Path 4" d="M38.685,0C51.845,0,63.471,5.42,70.566,13.828a27.964,27.964,0,0,1,6.8,18.074c0,17.619-17.32,8.951-38.685,8.951S0,49.521,0,31.9,17.32,0,38.685,0Z" transform="translate(321.274 401.195)" fill="#81ecec"/>
+  </g>
+</svg>

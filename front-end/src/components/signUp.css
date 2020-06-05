@@ -1,0 +1,84 @@
+.mainPan {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.leftPan {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 37.5%;
+    background-color: #B9D7EA;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+}
+
+.rightPan {
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signUpUserLogo {
+    width: 28%; 
+}
+
+.signUpText1 {
+    margin: 0;
+    margin-top: 5vh;
+    padding: 0;
+    font-size: 2.3vw;
+    font-weight: lighter;
+    text-align: center;
+    color: #426892;
+}
+
+.signUpText2 {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    font-size: 1.3vw;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    font-weight: lighter;
+    color: #426892;
+}
+
+.form {
+    height: 70%;
+    width: 50%;
+    background-color: white;
+}
+
+.form input {
+    height: 30px;
+    width: 32%;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding-left: 10px;
+    background-color: #DFE6E9;
+    border: 0;
+}
+
+.form input::placeholder{
+    color: #636E72;
+    font-weight: lighter;
+    opacity: 0.5;
+    
+}
+
+.form button {
+    margin-left: 20px;
+    margin-top: 10px;
+}
