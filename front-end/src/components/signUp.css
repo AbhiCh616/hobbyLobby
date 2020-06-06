@@ -58,27 +58,118 @@
 .form {
     height: 70%;
     width: 50%;
-    background-color: white;
 }
 
 .form input {
-    height: 30px;
-    width: 32%;
-    margin-left: 20px;
-    margin-top: 10px;
+    height: 40px;
+    width: calc(100% - 35px);
     padding-left: 10px;
+    padding-right: 5px;
     background-color: #DFE6E9;
     border: 0;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.nameField {
+    width: calc(50% - 29px) !important;
+    margin-right: 7px;
 }
 
 .form input::placeholder{
     color: #636E72;
     font-weight: lighter;
     opacity: 0.5;
-    
 }
 
 .form button {
     margin-left: 20px;
     margin-top: 10px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url('./calendarIcon.svg') center/100%;
+}
+
+.row {
+    margin-top: 5vh;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col-25 {
+    padding: 0;
+    float: left;
+    width: 30%;
+    color: black;
+}
+
+.col-25 label {
+    line-height: 40px;
+}
+
+.col-75 {
+    padding: 0;
+    margin: 0;
+    float: right;
+    width: 70%;
+}
+
+input[type = radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+input[type = radio] + label {
+    display: inline-block;
+    background-color: #DFE6E9;
+    line-height: 40px;
+    color: #636E72;
+    width: calc(33.3% - 7px);
+    text-align: center;
+}
+
+input[type = radio]:checked + label {
+    background-color: #C4DFFC;
+    color: #0984E3;
+}
+
+.maleLabel {
+    border-radius: 7px 0px 0px 7px;
+}
+
+.otherLabel {
+    border-radius: 0px 7px 7px 0px;
+}
+
+.cancelButton {
+    color: white;
+    background-color: #FF7675;
+    float: right;
+    vertical-align: bottom;
+    height: 40px;
+    width: 80px;
+    border-radius: 20px;
+    border: 0px;
+}
+
+.signUpButton {
+    color: white;
+    background-color: #769FCD;
+    float: right;
+    height: 40px;
+    width: 80px;
+    margin-right: 4%;
+    border-radius: 20px;
+    border: 0px;
+}
+
+.abc {
+    margin-top:3vh;
 }
