@@ -2,13 +2,15 @@ import React, {Component} from 'react';
 import './signUp.css';
 import signUpLogo from './signUp-user-icon.svg';
 import maleUnselected from './male-unselected.svg';
+import femaleUnselected from './female-unselected.svg'
 
 class SignUp extends Component {
+
     render() {
         return (
             <div className = "mainPan">
                 <div className = "leftPan">
-                    <div>
+                    <div className = "infoPan">
                         <img src = {signUpLogo} className = "signUpUserLogo"></img>
                         <p className = "signUpText1">Let's get you set up</p>
                         <p className = "signUpText2">
@@ -21,7 +23,7 @@ class SignUp extends Component {
                         <form>
                             <div className = "row">
                                 <div className = "col-25">
-                                    <label>First Name</label>
+                                    <label>Name</label>
                                 </div>
                                 <div className = "col-75">
                                     <input className = "nameField" type = "text" placeholder = "First"></input> 
@@ -41,18 +43,24 @@ class SignUp extends Component {
                                     <label>Gender</label>
                                 </div>
                                 <div className = "col-75">
-                                    
                                     <input type = "radio" id = "male" name = "gender" />
-                                    <label for = "male" className = "maleLabel">Male</label>
+                                    <label for = "male" className = "maleLabel">
+                                        <img src = {maleUnselected} id = "maleImage" />
+                                        Male
+                                    </label>
                                     <input type = "radio" id = "female" name = "gender" />
-                                    <label for = "female">Female</label>
+                                    <label for = "female" id = "femaleLabel">
+                                        <img src = {femaleUnselected} id = "femaleImage" />
+                                        Female
+                                    </label>
                                     <input type = "radio" id = "other" name = "gender" />
                                     <label for = "other" className = "otherLabel">Other</label>
                                 </div>
                             </div>
                             <div className = "row">
                                 <div className = "col-25">
-                                    <label>Email or Phone</label>
+                                    <label>
+                                        Email or Phone</label>
                                 </div>
                                 <div className = "col-75">
                                     <input type = "email" placeholder="example@mail.com"></input><br/>
@@ -74,9 +82,10 @@ class SignUp extends Component {
                                     <input type = "password"></input> <br/>
                                 </div>
                             </div>
-                            <div className = "abc">
+                            <div className = "actionButtons">
                                 <button className = "signUpButton" type="button">Sign Up</button>
-                                <button className = "cancelButton" type="button">Cancel</button>
+                                <button formAction="/" className = "cancelButton" type="button">
+                                    <a href = "/">Cancel</a></button>
                             </div>
                         </form> 
                     </div>      

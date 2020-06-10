@@ -19,6 +19,10 @@
     text-align:center;
 }
 
+.infoPan {
+    width: 100%;
+}
+
 .rightPan {
     margin: 0;
     padding: 0;
@@ -37,7 +41,7 @@
     margin: 0;
     margin-top: 5vh;
     padding: 0;
-    font-size: 2.3vw;
+    font-size: 4.7vh;
     font-weight: lighter;
     text-align: center;
     color: #426892;
@@ -47,7 +51,7 @@
     margin: 0;
     margin-top: 20px;
     padding: 0;
-    font-size: 1.3vw;
+    font-size: 2.7vh;
     margin-left: 25%;
     margin-right: 25%;
     text-align: center;
@@ -61,7 +65,7 @@
 }
 
 .form input {
-    height: 40px;
+    height: 5vh;
     width: calc(100% - 35px);
     padding-left: 10px;
     padding-right: 5px;
@@ -69,6 +73,7 @@
     border: 0;
     border-radius: 7px;
     font-size: 16px;
+    font-size: 2vh;
 }
 
 .nameField {
@@ -85,6 +90,10 @@
 .form button {
     margin-left: 20px;
     margin-top: 10px;
+}
+
+input[type="date"] {
+    color: #636E72;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -109,7 +118,54 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .col-25 label {
+    font-size: 2vh;
     line-height: 40px;
+}
+
+.googleSignIn {
+    color: #636E72;
+    background-color: #F4F5F6;
+    float: right;
+    height: 6vh;
+    width: 96.7%;
+    margin-right: 3.3%;
+    border-radius: 7px;
+    border: 0px;
+    font-size: 1.8vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.googleLogo {
+    width: 7.0%;
+    margin-left: 2%;
+}
+
+.googleSignIn label {
+    position: relative;
+    margin: auto;
+}
+
+.divider {
+    width: 4%;
+    margin-left: 27%;
+}
+
+#maleImage{
+    width: 20%;
+    vertical-align: -13%;
+    padding-right: 10px;
+}
+
+#femaleImage{
+    width: 14%;
+    vertical-align: -15%;
+    padding-right: 13px;
+}
+
+#femaleLabel {
+    margin: 0px 1% 0px 1%;
 }
 
 .col-75 {
@@ -131,8 +187,9 @@ input[type = radio] + label {
     background-color: #DFE6E9;
     line-height: 40px;
     color: #636E72;
-    width: calc(33.3% - 7px);
+    width: calc(33.3% - 9px);
     text-align: center;
+    font-size: 1.8vh;
 }
 
 input[type = radio]:checked + label {
@@ -148,28 +205,85 @@ input[type = radio]:checked + label {
     border-radius: 0px 7px 7px 0px;
 }
 
+.LogInButton {
+    color: white;
+    background-color: #769FCD;
+    float: right;
+    height: 5vh;
+    width: 6vw;
+    margin-right: 4%;
+    border-radius: 20px;
+    border: 0px;
+    font-size: 1.8vh;
+}
+
+.arrowIcon {
+    width: 7%;
+    vertical-align: -0.5%;
+    margin-left: 7%;
+}
+
 .cancelButton {
     color: white;
     background-color: #FF7675;
     float: right;
     vertical-align: bottom;
-    height: 40px;
-    width: 80px;
+    height: 5vh;
+    width: 5vw;
     border-radius: 20px;
     border: 0px;
+    font-size: 1.8vh;
+}
+
+.cancelButton a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.8vh;
 }
 
 .signUpButton {
     color: white;
     background-color: #769FCD;
     float: right;
-    height: 40px;
-    width: 80px;
+    height: 5vh;
+    width: 5vw;
     margin-right: 4%;
     border-radius: 20px;
     border: 0px;
+    font-size: 1.8vh;
 }
 
-.abc {
+.actionButtons {
     margin-top:3vh;
 }
+
+.helpSection {
+    margin-top: 20vh;
+    font-size: 1.9vh;
+}
+
+.sectionDivider {
+    width: 55%;
+}
+
+.forgotPassword {
+    padding-top: 2vh;
+}
+
+.forgotPassword a {
+    color: #FF7675;
+    text-decoration: none;
+}
+
+.signUpOption {
+    padding-top: 2vh;
+}
+
+.signUpOption a{
+    color: #769FCD;
+    margin-left: 0.8vh;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
