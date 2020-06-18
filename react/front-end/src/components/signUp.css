@@ -215,6 +215,8 @@ input[type = radio]:checked + label {
     border-radius: 20px;
     border: 0px;
     font-size: 1.8vh;
+    outline: none;
+    cursor: pointer;
 }
 
 .arrowIcon {
@@ -233,6 +235,8 @@ input[type = radio]:checked + label {
     border-radius: 20px;
     border: 0px;
     font-size: 1.8vh;
+    cursor: pointer;
+    outline: none;
 }
 
 .cancelButton a {
@@ -251,6 +255,8 @@ input[type = radio]:checked + label {
     border-radius: 20px;
     border: 0px;
     font-size: 1.8vh;
+    cursor: pointer;
+    outline: none;
 }
 
 .actionButtons {
