@@ -5,8 +5,24 @@ import arrowIcon from './arrow-icon.svg';
 import googleLogo from './google-logo.svg'
 import dividerOr from './divider-or.svg'
 import dividerLine from './divide-line.svg'
+import PropTypes from 'prop-types'
 
 class LogIn extends Component {
+    state = {
+        username: '',
+        password: ''
+    }
+
+    handle_change = e => {
+        const name = e.target.name
+        const value = e.target.value
+        this.setState(prevstate => {
+            const newState = { ...prevstate }
+            newState[name] = value
+            return newState
+        })
+    }
+
     render() {
         return (
             <div className="mainPan">
@@ -21,7 +37,7 @@ class LogIn extends Component {
                 </div>
                 <div className="rightPan">
                     <div className="form">
-                        <form action="login">
+                        <form onSubmit={e => this.props.handle_login(e, this.state)}>
                             <div className="row">
                                 <button className="googleSignIn" type="button">
                                     <img src={googleLogo} className="googleLogo" />
@@ -36,7 +52,7 @@ class LogIn extends Component {
                                     <label>Username or Email</label>
                                 </div>
                                 <div className="col-75">
-                                    <input type="text" />
+                                    <input type="text" name="username" value={this.state.username} onChange={this.handle_change} />
                                 </div>
                             </div>
                             <div className="row">
@@ -44,7 +60,7 @@ class LogIn extends Component {
                                     <label>Password</label>
                                 </div>
                                 <div className="col-75">
-                                    <input type="password"></input> <br />
+                                    <input type="password" name="password" value={this.state.password} onChange={this.handle_change} />
                                 </div>
                             </div>
                             <div className="actionButtons">
@@ -71,3 +87,7 @@ class LogIn extends Component {
 }
 
 export default LogIn
+
+LogIn.propTypes = {
+    handle_login: PropTypes.func.isRequired
+}

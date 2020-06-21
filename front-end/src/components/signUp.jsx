@@ -3,8 +3,23 @@ import './signUp.css';
 import signUpLogo from './signUp-user-icon.svg';
 import maleUnselected from './male-unselected.svg';
 import femaleUnselected from './female-unselected.svg'
+import PropTypes from 'prop-types'
 
 class SignUp extends Component {
+    state = {
+        username: '',
+        password: ''
+    }
+
+    handle_change = e => {
+        const name = e.target.name
+        const value = e.target.value
+        this.setState(prevstate => {
+            const newState = { ...prevstate }
+            newState[name] = value
+            return newState
+        })
+    }
 
     render() {
         return (
@@ -20,14 +35,14 @@ class SignUp extends Component {
                 </div>
                 <div className="rightPan">
                     <div className="form">
-                        <form action="signup/submit">
+                        <form onSubmit={e => this.props.handle_signup(e, this.state)}>
                             <div className="row">
                                 <div className="col-25">
                                     <label>Name</label>
                                 </div>
                                 <div className="col-75">
                                     <input className="nameField" type="text" placeholder="First"></input>
-                                    <input className="nameField" type="text" placeholder="Last"></input><br />
+                                    <input className="nameField" type="text" placeholder="Last"></input>
                                 </div>
                             </div>
                             <div className="row">
@@ -35,7 +50,7 @@ class SignUp extends Component {
                                     <label>Date of Birth</label>
                                 </div>
                                 <div className="col-75">
-                                    <input type="date"></input> <br />
+                                    <input type="date"></input>
                                 </div>
                             </div>
                             <div className="row">
@@ -44,17 +59,17 @@ class SignUp extends Component {
                                 </div>
                                 <div className="col-75">
                                     <input type="radio" id="male" name="gender" />
-                                    <label for="male" className="maleLabel">
+                                    <label htmlFor="male" className="maleLabel">
                                         <img src={maleUnselected} id="maleImage" />
                                         Male
                                     </label>
                                     <input type="radio" id="female" name="gender" />
-                                    <label for="female" id="femaleLabel">
+                                    <label htmlFor="female" id="femaleLabel">
                                         <img src={femaleUnselected} id="femaleImage" />
                                         Female
                                     </label>
                                     <input type="radio" id="other" name="gender" />
-                                    <label for="other" className="otherLabel">Other</label>
+                                    <label htmlFor="other" className="otherLabel">Other</label>
                                 </div>
                             </div>
                             <div className="row">
@@ -63,7 +78,7 @@ class SignUp extends Component {
                                         Email or Phone</label>
                                 </div>
                                 <div className="col-75">
-                                    <input type="email" placeholder="example@mail.com"></input><br />
+                                    <input type="email" placeholder="example@mail.com"></input>
                                 </div>
                             </div>
                             <div className="row">
@@ -71,7 +86,7 @@ class SignUp extends Component {
                                     <label>Username</label>
                                 </div>
                                 <div className="col-75">
-                                    <input type="text"></input> <br />
+                                    <input type="text" name="username" value={this.state.username} onChange={this.handle_change} />
                                 </div>
                             </div>
                             <div className="row">
@@ -79,7 +94,7 @@ class SignUp extends Component {
                                     <label>Password</label>
                                 </div>
                                 <div className="col-75">
-                                    <input type="password"></input> <br />
+                                    <input type="password" name="password" value={this.state.password} onChange={this.handle_change} />
                                 </div>
                             </div>
                             <div className="actionButtons">
@@ -93,6 +108,10 @@ class SignUp extends Component {
             </div>
         )
     }
-};
+}
 
-export default SignUp;
+export default SignUp
+
+SignUp.propTypes = {
+    handle_signup: PropTypes.func.isRequired
+}

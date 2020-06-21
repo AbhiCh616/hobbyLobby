@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from django.views.generic.base import TemplateView
+from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
     path('', include('login.urls')),
     path('signup/', include('login.urls')),
+    path('token-auth/', obtain_jwt_token),
     path('admin/', admin.site.urls),
+    path('core/', include('core.urls')),
 ]
