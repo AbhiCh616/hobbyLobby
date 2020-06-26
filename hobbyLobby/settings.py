@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'core.apps.CoreConfig'
+    'core.apps.CoreConfig',
+    'login',
+    'feed'
 ]
 
 MIDDLEWARE = [
@@ -145,3 +147,6 @@ CORS_ORIGIN_WHITELIST = (
 JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'hobbyLobby.utils.my_jwt_response_handler'
 }
+
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
+MEDIA_URL = '/media/'

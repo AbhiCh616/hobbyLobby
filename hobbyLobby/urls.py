@@ -18,6 +18,8 @@ from django.urls import path
 from django.urls import include
 from django.views.generic.base import TemplateView
 from rest_framework_jwt.views import obtain_jwt_token
+from hobbyLobby import settings
+
 
 urlpatterns = [
     path('', include('login.urls')),
@@ -26,3 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('core/', include('core.urls')),
 ]
+"""if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)
+"""
