@@ -1,0 +1,74 @@
+.mainFeedPan {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100vw;
+    background-color: #E0EAFC;
+    display: flex;
+}
+
+.leftFeedPan {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 17vw;
+    background-color: #F1F2F6;
+    opacity: 0.75;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    text-align:center;
+}
+
+.userLink {
+    padding-top: 10vh;
+    font-weight: bold;
+    font-size: 2.45vh;
+}
+
+.centerFeedPan {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 64.5vw;
+    background-color: #FCFCFC;
+    justify-content: center;
+}
+
+.centerFeedPan .topBar {
+    font-size: 4.9vh;
+    width: 100%;
+    padding: 70px;
+    color: #707070;
+}
+
+.centerFeedPan .postsPan {
+    width: 64.5;
+    height: 75%;
+    padding-top: 0px;
+    padding-bottom: 0;
+    padding-left: 70px;
+    padding-right: 70px;
+    overflow: hidden; 
+    overflow-y: scroll;
+}
+
+.postText {
+    background-color: #2ED573;
+    padding: 25px;
+    margin-bottom: 20px;
+    color: #707070;
+    font-size: 2.1vh;
+}
+
+.rightFeedPan {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 18.5vw;
+    background-color: #F5F7FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

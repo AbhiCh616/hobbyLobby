@@ -85,6 +85,8 @@ class App extends Component {
       return (
         this.state.logged_in && <Feed handle_logout={this.handle_logout} />
       )
+    if (true)
+      return (<Feed />)
     return (
       <React.Fragment>
         <Router>
