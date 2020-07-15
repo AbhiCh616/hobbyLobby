@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'core.apps.CoreConfig',
+    'feed.apps.FeedConfig',
     'login',
-    'feed'
 ]
 
 MIDDLEWARE = [
@@ -148,5 +148,5 @@ JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'hobbyLobby.utils.my_jwt_response_handler'
 }
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

@@ -27,7 +27,9 @@ urlpatterns = [
     path('token-auth/', obtain_jwt_token),
     path('admin/', admin.site.urls),
     path('core/', include('core.urls')),
+    path('feed/', include('feed.urls')),
 ]
+
 """if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL,
                               document_root=settings.MEDIA_ROOT)
