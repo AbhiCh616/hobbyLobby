@@ -3,27 +3,30 @@ import './feed.css'
 import Post from './post'
 
 class Feed extends Component {
-    state = {
-        userImage: './userProfile.svg',
-        userName: 'Taylor Swift',
-        posts: [
-            { text: 'text1', image: 'image1' },
-            { text: 'text2', image: 'image2' },
-            { text: 'text3', image: 'image3' },
-            { text: 'text1', image: 'image1' },
-            { text: 'text2', image: 'image2' },
-            { text: 'text3', image: 'image3' },
-            { text: 'text1', image: 'image1' },
-            { text: 'text2', image: 'image2' },
-            { text: 'text3', image: 'image3' },
-            { text: 'text1', image: 'image1' },
-            { text: 'text2', image: 'image2' },
-            { text: 'text3', image: 'image3' },
 
-        ]
+    constructor(props) {
+        super(props)
+        this.state = {
+            postList: [],
+            userName: 'Taylor Swift'
+        }
+        this.fetchPosts = this.fetchPosts.bind(this)
+    }
+
+    fetchPosts() {
+        fetch('http://127.0.0.1:8000/feed/music_list/')
+            .then(response => response.json())
+            .then(data => this.setState({
+                postList: data
+            }))
+    }
+
+    componentWillMount() {
+        this.fetchPosts()
     }
 
     render() {
+
         return (
             <React.Fragment>
                 <div className="mainFeedPan">
@@ -37,8 +40,8 @@ class Feed extends Component {
                             Recent
                         </div>
                         <div className="postsPan">
-                            {this.state.posts.map(
-                                post => <Post text={post.text} image={post.images} />
+                            {this.state.postList.map(
+                                post => <Post text={post.caption} image={post.img} />
                             )}
                         </div>
                     </div>
