@@ -1,7 +1,6 @@
 from rest_framework import serializers
-from feed.models import Music
-from feed.models import Dance
-from feed.models import Skating
+from feed.models import Music,Dance,Skating
+
 
 class MusicSerializer(serializers.ModelSerializer):
     class Meta:
