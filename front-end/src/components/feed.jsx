@@ -38,7 +38,13 @@ class Feed extends Component {
                     </div>
                     <div className="centerFeedPan">
                         <div className="topBar">
-                            Recent
+                           <div class="recentLabel">Recent                       
+                                <select id = "myList">
+                                <option value = "Music">Music</option>
+                                <option value = "Dance">Dance</option>
+                                <option value = "Skating">Skating</option>
+                                </select>
+                            </div>
                         </div>
                         <div className="postsPan">
                             {this.state.postList.map(
