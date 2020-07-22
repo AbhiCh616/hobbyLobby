@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import LogIn from './components/logIn'
 import SignUp from './components/signUp'
 import Feed from './components/feed'
+import UserProfile from './components/userProfile'
 
 class App extends Component {
   constructor(props) {
@@ -83,7 +84,12 @@ class App extends Component {
   render() {
     if (this.state.logged_in)
       return (
-        this.state.logged_in && <Feed />
+        <React.Fragment>
+          <Router>
+            <Route path="/" exact render={(props => (<Feed {...props} />))} />
+            <Route path="/profile_page" exact component={UserProfile} />
+          </Router>
+        </React.Fragment>
       )
     return (
       <React.Fragment>

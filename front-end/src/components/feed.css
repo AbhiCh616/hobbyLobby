@@ -22,6 +22,8 @@
 }
 
 .userLink {
+    text-decoration: none;
+    color: black;
     padding-top: 10vh;
     font-weight: bold;
     font-size: 2.45vh;
@@ -34,6 +36,8 @@
     width: 64.5vw;
     background-color: #FCFCFC;
     justify-content: center;
+    overflow: hidden; 
+    overflow-y: scroll;
 }
 
 .centerFeedPan .topBar {
@@ -42,7 +46,6 @@
     padding: 70px;
     color: #707070;
 }
-
 .centerFeedPan .postsPan {
     width: 64.5;
     height: 75%;
@@ -50,8 +53,6 @@
     padding-bottom: 0;
     padding-left: 70px;
     padding-right: 70px;
-    overflow: hidden; 
-    overflow-y: scroll;
 }
 
 .postText {
