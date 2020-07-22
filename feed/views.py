@@ -1,14 +1,9 @@
-from feed.serializers import MusicSerializer
-from feed.serializers import DanceSerializer
-from feed.serializers import SkatingSerializer
-from feed.models import Music
-from feed.models import Dance
-from feed.models import Skating
+from feed.serializers import MusicSerializer,DanceSerializer,SkatingSerializer
+from feed.models import Music,Dance,Skating
 from django.http import HttpResponseRedirect
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.decorators import authentication_classes, permission_classes
 
 
 @api_view(['GET'])
@@ -28,3 +23,12 @@ def skatingList(request):
     skatings = Skating.objects.all()
     serializer = SkatingSerializer(skatings, many=True)
     return Response(serializer.data)
+
+@api_view(['POST'])
+def MusicCreate(request):
+    serializer=MusicSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return True
+    return False
+
