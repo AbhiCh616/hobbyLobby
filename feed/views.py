@@ -18,12 +18,20 @@ def musicList(request):
     musics = Music.objects.all()
     serializer = MusicSerializer(musics, many=True)
     return Response(serializer.data)
+
+
 @api_view(['GET'])
+@authentication_classes([])
+@permission_classes([])
 def danceList(request):
     dances = Dance.objects.all()
-    serializer =DanceSerializer(dances, many=True)
+    serializer = DanceSerializer(dances, many=True)
     return Response(serializer.data)
+
+
 @api_view(['GET'])
+@authentication_classes([])
+@permission_classes([])
 def skatingList(request):
     skatings = Skating.objects.all()
     serializer = SkatingSerializer(skatings, many=True)

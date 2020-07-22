@@ -8,10 +8,11 @@ class Feed extends Component {
         super(props)
         this.state = {
             postList: [],
-            selectedHobbyFilter: 'music_list',
+            selectedHobbyFilter: '',
             userName: 'Taylor Swift'
         }
         this.fetchPosts = this.fetchPosts.bind(this)
+        this.handleHobbySelection = this.handleHobbySelection.bind(this)
     }
 
     fetchPosts() {
@@ -22,7 +23,18 @@ class Feed extends Component {
             }))
     }
 
+    handleHobbySelection(e) {
+        var value = e.target.value
+        this.setState({
+            selectedHobbyFilter: value
+        })
+    }
+
     componentWillMount() {
+        this.fetchPosts()
+    }
+
+    componentDidUpdate() {
         this.fetchPosts()
     }
 
@@ -38,17 +50,21 @@ class Feed extends Component {
                     </div>
                     <div className="centerFeedPan">
                         <div className="topBar">
-                           <div class="recentLabel">Recent                       
-                                <select id = "myList">
-                                <option value = "Music">Music</option>
-                                <option value = "Dance">Dance</option>
-                                <option value = "Skating">Skating</option>
+                            <div className="recentLabel">
+                                Recent
+                            </div>
+                            <div className="hobbySelectionListContainer">
+                                <select id="myList" onChange={this.handleHobbySelection}>
+                                    <option value="no_list">Select Hobby</option>
+                                    <option value="music_list">Music</option>
+                                    <option value="dance_list">Dance</option>
+                                    <option value="skating_list">Skating</option>
                                 </select>
                             </div>
                         </div>
                         <div className="postsPan">
                             {this.state.postList.map(
-                                post => <Post text={post.caption} date={post.post_date} />
+                                post => <Post key={post.post_id} text={post.caption} date={post.post_date} />
                             )}
                         </div>
                     </div>
