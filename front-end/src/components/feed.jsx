@@ -8,13 +8,14 @@ class Feed extends Component {
         super(props)
         this.state = {
             postList: [],
+            selectedHobbyFilter: 'music_list',
             userName: 'Taylor Swift'
         }
         this.fetchPosts = this.fetchPosts.bind(this)
     }
 
     fetchPosts() {
-        fetch('http://127.0.0.1:8000/feed/music_list/')
+        fetch('http://127.0.0.1:8000/feed/' + this.state.selectedHobbyFilter)
             .then(response => response.json())
             .then(data => this.setState({
                 postList: data
@@ -31,9 +32,9 @@ class Feed extends Component {
             <React.Fragment>
                 <div className="mainFeedPan">
                     <div className="leftFeedPan">
-                        <div className="userLink">
+                        <a href="/profile_page" className="userLink">
                             {this.state.userName}
-                        </div>
+                        </a>
                     </div>
                     <div className="centerFeedPan">
                         <div className="topBar">
@@ -41,7 +42,7 @@ class Feed extends Component {
                         </div>
                         <div className="postsPan">
                             {this.state.postList.map(
-                                post => <Post text={post.caption} image={post.img} />
+                                post => <Post text={post.caption} date={post.post_date} />
                             )}
                         </div>
                     </div>

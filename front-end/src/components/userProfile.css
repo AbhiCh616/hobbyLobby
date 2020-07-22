@@ -1,0 +1,44 @@
+.mainProfilePan {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100vw;
+    background-color: #E0EAFC;
+    display: flex;
+}
+
+.leftProfilePan {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 17vw;
+    background-color: #F1F2F6;
+    opacity: 0.75;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    text-align:center;
+}
+
+.userLink {
+    padding-top: 10vh;
+    font-weight: bold;
+    font-size: 2.45vh;
+}
+
+.centerProfilePan {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 83vw;
+    background-color: #FCFCFC;
+    justify-content: center;
+}
+
+.centerProfilePan .topBar {
+    font-size: 4.9vh;
+    width: 100%;
+    padding: 70px;
+    color: #707070;
+}
