@@ -6,8 +6,8 @@ class Music(models.Model):
     #user_id = models.ForeignKey("feed.models", verbose_name=(""), on_delete=models.CASCADE)
     post_date = models.DateTimeField((""), auto_now=False, auto_now_add=False)
     caption = models.TextField((""))
-    img = models.ImageField(
-        (""), upload_to=None, height_field=None, width_field=None, max_length=None)
+    # img = models.ImageField(
+    # (""), upload_to=None, height_field=None, width_field=None, max_length=None)
 
 
 class Dance(models.Model):
@@ -15,8 +15,8 @@ class Dance(models.Model):
     #user_id = models.ForeignKey("feed.models", verbose_name=(""), on_delete=models.CASCADE)
     post_date = models.DateTimeField((""), auto_now=False, auto_now_add=False)
     caption = models.TextField((""))
-    img = models.ImageField(
-        (""), upload_to=None, height_field=None, width_field=None, max_length=None)
+    # img = models.ImageField(
+    # (""), upload_to=None, height_field=None, width_field=None, max_length=None)
 
 
 class Skating(models.Model):
@@ -24,8 +24,8 @@ class Skating(models.Model):
     #user_id = models.ForeignKey("feed.models", verbose_name=(""), on_delete=models.CASCADE)
     post_date = models.DateTimeField((""), auto_now=False, auto_now_add=False)
     caption = models.TextField((""))
-    img = models.ImageField(
-        (""), upload_to=None, height_field=None, width_field=None, max_length=None)
+    # img = models.ImageField(
+    # (""), upload_to=None, height_field=None, width_field=None, max_length=None)
 
 
 class User(models.Model):

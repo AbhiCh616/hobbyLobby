@@ -1,10 +1,12 @@
 from django.urls import path
-from feed.views import musicList, danceList, skatingList, MusicCreate
+from . import views
 
 
 urlpatterns = [
-    path('music_list/', musicList),
-    path('dance_list/', danceList),
-    path('skating_list/', skatingList),
-    path('music_list/create', MusicCreate),
+    path('music_list/', views.musicList, name='music_list'),
+    path('dance_list/', views.danceList, name='dance_list'),
+    path('skating_list/', views.skatingList, name='skating_list'),
+    path('music_list/create/', views.musicCreate, name='music_create'),
+    path('dance_list/create/', views.danceCreate, name='dance_create'),
+    path('skating_list/create/', views.skatingCreate, name='skating_create'),
 ]

@@ -36,9 +36,25 @@ def skatingList(request):
 @api_view(['POST'])
 @authentication_classes([])
 @permission_classes([])
-def MusicCreate(request):
+def musicCreate(request):
     serializer = MusicSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return True
-    return False
+
+
+@api_view(['POST'])
+@authentication_classes([])
+@permission_classes([])
+def danceCreate(request):
+    serializer = DanceSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+
+
+@api_view(['POST'])
+@authentication_classes([])
+@permission_classes([])
+def skatingCreate(request):
+    serializer = SkatingSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
