@@ -6,8 +6,26 @@ class ProfilePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            userName: 'Taylor Swift'
+            userName: 'Taylor Swift',
+            postCaption: '',
+            postHobbyTag: '',
         }
+        this.handleHobbyTagSelection = this.handleHobbyTagSelection.bind(this)
+        this.handleHobbyCaption = this.handleHobbyCaption.bind(this)
+    }
+
+    handleHobbyTagSelection(e) {
+        var value = e.target.value
+        this.setState({
+            postHobbyTag: value,
+        })
+    }
+
+    handleHobbyCaption(e) {
+        var value = e.target.value
+        this.setState({
+            postCaption: value,
+        })
     }
 
     render() {
@@ -19,31 +37,45 @@ class ProfilePage extends Component {
                             {this.state.userName}
                         </div>
                     </div>
-                    <div className="centerProfilePan">
+                    <div className="centerProfilePane">
                         <div className="topBar">
                             Create Post
                         </div>
-                        <form>
-                        <div className="FormPane">
-                        <div className="row">
-                            <label id="label2">Make Post</label>
-                            <textarea id="PostCaption" name="postCaption" rows="6" cols="60" placeholder="What's on your mind?"></textarea>
-                        </div>
+                        <form className="createPostArea">
+                            <div className="row">
+                                <div className="post-col-25">
+                                    <label>Make Post</label>
+                                </div>
+                                <div className="col-75">
+                                    <textarea className="postCaption" name="postCaption" placeholder="What's on your mind?"
+                                        onChange={this.handleHobbyCaption}></textarea>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="post-col-25">
+                                    <label>Media</label>
+                                </div>
+                                <div className="col-75">
 
-                        <div className="row">
-                            <lable id="label1">Media</lable>
-                        </div>
-
-                        <div className="row">
-                            <lable id="label1">Tags</lable>
-                            
-                        </div>
-                        <button className="signUpButton" type="submit">Post</button>
-
-                        </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="post-col-25">
+                                    <label>Tags</label>
+                                </div>
+                                <div className="col-75">
+                                    <div className="postHobbyTagContainer">
+                                        <select id="postHobbyTag" onChange={this.handleHobbyTagSelection}>
+                                            <option value="no_tag">Select Hobby</option>
+                                            <option value="music">Music</option>
+                                            <option value="dance">Dance</option>
+                                            <option value="skating">Skating</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="createPostButton" type="submit">Post</button>
                         </form>
-                        <div className="createPostArea">
-                        </div>
                     </div>
                 </div>
             </React.Fragment >

@@ -27,7 +27,7 @@
     font-size: 2.45vh;
 }
 
-.centerProfilePan {
+.centerProfilePane {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -36,76 +36,74 @@
     justify-content: center;
 }
 
-.centerProfilePan .topBar {
+.centerProfilePane .topBar {
     font-size: 4.9vh;
     width: 100%;
     padding: 70px;
     color: #707070;
 }
-.signUpButton {
+
+.createPostArea {
+    margin-left: -15%;
+    margin-top: -5vh;
+}
+
+.post-col-25 {
+    padding: 0;
+    float: left;
+    width: 30%;
+    color: black;
+    text-align: right;
+}
+
+.post-col-25 label {
+    padding-right: 3vw;
+    font-size: 2vh;
+    line-height: 40px;
+}
+
+.postCaption {
+    font-size: 2vh;
+    margin-top: 0.7vh;
+    padding: 1vh 1vw 1vh 1vw;
+    background-color: #F1F2F6;
+    border: #F1F2F6;
+    border-radius: 7px;
+}
+
+textarea {
+    width: 32vw;
+    height: 14vh;
+}
+
+.postHobbyTagContainer{
+    display: inline-block;
+    margin-right: 9vw;
+    width: 50%;
+    margin-top: 0.7vh;
+}
+
+#postHobbyTag {
+    height: 5vh;
+    width: 13vw;
+    padding-left: 0.5vw;
+    font-size: 2vh;
+    border-radius: 10px;
+    background-color: #F1F2F6;
+    border-color: #F1F2F6;
+}
+
+#createPostButton {
     color: white;
     background-color: #769FCD;
     height: 5vh;
     width: 5vw;
-    margin-right: 47%;
+    margin-top: 2vh;
+    margin-right: 35%;
     border-radius: 20px;
     border: 0px;
     font-size: 1.8vh;
     cursor: pointer;
     outline: none;
-}
-.row {
-    margin-top: 5vh;
-}
-
-.col-25 {
-    padding: 0;
-    float: left;
-    width: 30%;
-    color: black;
-}
-
-.col-25 label {
-    font-size: 2vh;
-    line-height: 40px;
-}
-.col-75 {
-    padding: 0;
-    margin: 0;
     float: right;
-    width: 70%;
-}
-.FormPane
-{
-    margin-left:10%;
-}
-.caption
-{
-    height:30%;
-}
-#PostCaption
-{
-    margin-right: 47%;
-    width:40%;
-    height:100%;
-    float:right;
-    padding-left: 1%;
-    border: 1;
-    border-radius: 7px;
-    font-size: 16px;
-    font-size: 2vh;
-    display: inline-block;
-}
-#label1
-{
-    padding-top: 0px;
-    padding-bottom: 20px;
-    color: #4e575a;
-    margin-right: 94%;
-    float:right
-}
-#label2
-{
-    color: #4e575a;
-    
 }
