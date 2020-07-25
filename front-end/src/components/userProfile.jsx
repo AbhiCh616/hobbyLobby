@@ -7,24 +7,52 @@ class ProfilePage extends Component {
         super(props)
         this.state = {
             userName: 'Taylor Swift',
-            postCaption: '',
-            postHobbyTag: '',
+            newPostValues: {
+                post_date: '',
+                caption: '',
+            },
+            postHobbyTag: ''
         }
         this.handleHobbyTagSelection = this.handleHobbyTagSelection.bind(this)
         this.handleHobbyCaption = this.handleHobbyCaption.bind(this)
+        this.handleSubmitPost = this.handleSubmitPost.bind(this)
     }
 
     handleHobbyTagSelection(e) {
         var value = e.target.value
         this.setState({
-            postHobbyTag: value,
+            postHobbyTag: value
         })
     }
 
     handleHobbyCaption(e) {
         var value = e.target.value
         this.setState({
-            postCaption: value,
+            newPostValues: {
+                ...this.state.newPostValues,
+                caption: value,
+            }
+        })
+    }
+
+    handleSubmitPost(e) {
+        e.preventDefault()
+
+        this.setState({
+            newPostValues: {
+                ...this.state.newPostValues,
+                post_date: new Date()
+            }
+        })
+
+        var url = 'http://127.0.0.1:8000/feed/' +
+            this.state.postHobbyTag + '_list/create/'
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(this.state.newPostValues)
         })
     }
 
@@ -41,7 +69,7 @@ class ProfilePage extends Component {
                         <div className="topBar">
                             Create Post
                         </div>
-                        <form className="createPostArea">
+                        <form className="createPostArea" onSubmit={this.handleSubmitPost}>
                             <div className="row">
                                 <div className="post-col-25">
                                     <label>Make Post</label>
